@@ -1,4 +1,4 @@
-// package.json
+{
   "dependencies": {
     "react": "*",
     "react-tools": "*"
@@ -7,3 +7,4 @@
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
     "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
   }
+}
