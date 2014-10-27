@@ -1,10 +1,15 @@
 /** @jsx React.DOM */
-jest.autoMockOff();
+// jest.autoMockOff();
+
+// Create a fake global `window` and `document` object:
+require('../testdom')('<html><body></body></html>');
+
+var assert = require('assert');
 
 describe('CheckboxWithLabel', function() {
   it('changes the text after click', function() {
     var React = require('react/addons');
-    var CheckboxWithLabel = require('../CheckboxWithLabel.js');
+    var CheckboxWithLabel = require('../CheckboxWithLabel.jsx');
     var TestUtils = React.addons.TestUtils;
 
     // Render a checkbox with label in the document
@@ -15,12 +20,12 @@ describe('CheckboxWithLabel', function() {
     // Verify that it's Off by default
     var label = TestUtils.findRenderedDOMComponentWithTag(
       checkbox, 'label');
-    expect(label.getDOMNode().textContent).toEqual('Off');
+    assert.equal(label.getDOMNode().textContent, 'Off');
 
     // Simulate a click and verify that it is now On
     var input = TestUtils.findRenderedDOMComponentWithTag(
       checkbox, 'input');
     TestUtils.Simulate.change(input);
-    expect(label.getDOMNode().textContent).toEqual('On');
+    assert.equal(label.getDOMNode().textContent, 'On');
   });
 });
