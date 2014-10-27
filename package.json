@@ -4,6 +4,10 @@
     "react": "*",
     "react-tools": "*"
   },
+  "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "mocha": "^2.0.1"
+  },
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
     "unmockedModulePathPatterns": [
@@ -11,10 +15,6 @@
     ]
   },
   "scripts": {
-    "test": "jest __tests__/*-test.js"
-  },
-  "devDependencies": {
-    "coffee-script": "^1.8.0",
-    "mocha": "^2.0.1"
+    "test": "mocha --compilers jsx:preprocessor.js __tests__/*-test.jsx"
   }
 }

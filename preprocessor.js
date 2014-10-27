@@ -1,10 +1,4 @@
-// preprocessor.js
-// (function() {
-//   var ReactTools = require('react-tools');
-//   console.log('called process');
-//   return ReactTools.transform(src);
-// })();
-// 
+// Source: https://github.com/Khan/react-components/blob/master/test/compiler.js
 var fs = require('fs');
 var ReactTools = require('react-tools');
 require.extensions['.jsx'] = function(module, filename) {

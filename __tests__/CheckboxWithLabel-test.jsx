@@ -1,5 +1,4 @@
 /** @jsx React.DOM */
-// jest.autoMockOff();
 
 // Create a fake global `window` and `document` object:
 require('../testdom')('<html><body></body></html>');
