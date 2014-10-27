@@ -1,5 +1,3 @@
-// __tests__/CheckboxWithLabel-test.js
-
 /** @jsx React.DOM */
 jest.dontMock('../CheckboxWithLabel.js');
 describe('CheckboxWithLabel', function() {

@@ -1,10 +1,14 @@
 {
   "dependencies": {
+    "jest-cli": "^0.1.18",
     "react": "*",
     "react-tools": "*"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
     "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
+  },
+  "scripts": {
+    "test": "jest __tests__/*-test.js"
   }
 }
