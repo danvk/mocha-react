@@ -8,6 +8,9 @@ var reactStub = 'module.exports = require("react").createClass({render:function(
 
 // Should this file be stubbed out for testing?
 function shouldStub(filename) {
+  if (filename.indexOf('BigCom') >= 0) {
+    console.log('global.reactModulesToStub = ', global.reactModulesToStub);
+  }
   if (!global.reactModulesToStub) return false;
 
   // Check if the file name ends with any stub path.
