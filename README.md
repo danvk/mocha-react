@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/danvk/mocha-react.svg?branch=master)](https://travis-ci.org/danvk/mocha-react)
+[![Coverage Status](https://coveralls.io/repos/danvk/mocha-react/badge.svg?branch=master)](https://coveralls.io/r/danvk/mocha-react?branch=master)
 
 mocha-react
 ===========
