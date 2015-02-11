@@ -17,6 +17,12 @@ High order bits:
 - A fake DOM is provided via `jsdom` (see `tests/testdom.js`).
 - `tests/compiler.js` registers a compiler which transforms JSX/Harmony code to standard ES5 JS.
 
+To run the tests:
+
+```
+mocha --compilers .:tests/compiler.js tests/*test.js
+```
+
 Inspiration and guidance came from the [Testing React Components][2] blog post and the Khan Academy's [React Components Makefile][3].
 
 [1]: http://facebook.github.io/jest/docs/tutorial-react.html#content
