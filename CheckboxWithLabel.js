@@ -1,6 +1,4 @@
-/** @jsx React.DOM */
 var React = require('react/addons');
-var BigComplexModule = require('./BigComplexModule.js');
 
 var CheckboxWithLabel = React.createClass({
   getInitialState: function() {
@@ -10,7 +8,6 @@ var CheckboxWithLabel = React.createClass({
     this.setState({isChecked: !this.state.isChecked});
   },
   render: function() {
-    var x = BigComplexModule.bigComplexFunction();
     return (
       <label>
         <input

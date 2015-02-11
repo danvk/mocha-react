@@ -1,20 +1,12 @@
 {
   "dependencies": {
-    "jest-cli": "^0.1.18",
-    "react": "*",
-    "react-tools": "*"
+    "react": "^0.12.2",
+    "react-tools": "^0.12.2"
   },
   "devDependencies": {
-    "coffee-script": "^1.8.0",
     "mocha": "^2.0.1"
   },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react"
-    ]
-  },
   "scripts": {
-    "test": "mocha --compilers jsx:preprocessor.js __tests__/*-test.jsx"
+    "test": "mocha --compilers jsx:preprocessor.js tests/*-test.js"
   }
 }

@@ -1,14 +1,12 @@
-/** @jsx React.DOM */
-
 // Create a fake global `window` and `document` object:
-require('../testdom')('<html><body></body></html>');
+require('./testdom')('<html><body></body></html>');
 
 var assert = require('assert');
 
 describe('CheckboxWithLabel', function() {
   it('changes the text after click', function() {
     var React = require('react/addons');
-    var CheckboxWithLabel = require('../CheckboxWithLabel.jsx');
+    var CheckboxWithLabel = require('../CheckboxWithLabel');
     var TestUtils = React.addons.TestUtils;
 
     // Render a checkbox with label in the document
