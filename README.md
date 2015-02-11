@@ -19,7 +19,10 @@ High order bits:
 
 - A fake DOM is provided via `jsdom` (see `tests/testdom.js`).
 - `global.reactModulesToStub` contains a list of modules to replace with stubs (ala Jest).
-- `tests/compiler.js` registers a compiler which transforms JSX/Harmony code to standard ES5 JS and implements the stubbing.
+- `tests/compiler.js` registers a compiler which transforms JSX/Harmony code to
+  standard ES5 JS and implements the stubbing.
+- `tests/blanket-stub-jsx.js` applies the same transformations, additionally
+  instrumenting code for test coverage. The results are [posted to coveralls.io][4].
 
 To run the tests using the `mocha` command line:
 
@@ -32,3 +35,4 @@ Inspiration and guidance came from the [Testing React Components][2] blog post a
 [1]: http://facebook.github.io/jest/docs/tutorial-react.html#content
 [2]: http://www.asbjornenge.com/wwc/testing_react_components.html
 [3]: https://github.com/Khan/react-components/blob/master/Makefile
+[4]: https://coveralls.io/r/danvk/mocha-react?branch=master
