@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "0.10"
+
+# By default, Travis runs "npm install" to install dependencies and "npm test"
+# to run the tests. Both of these work for us.
+# See http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
