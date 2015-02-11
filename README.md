@@ -15,9 +15,10 @@ npm test
 High order bits:
 
 - A fake DOM is provided via `jsdom` (see `tests/testdom.js`).
-- `tests/compiler.js` registers a compiler which transforms JSX/Harmony code to standard ES5 JS.
+- `global.reactModulesToStub` contains a list of modules to replace with stubs (ala Jest).
+- `tests/compiler.js` registers a compiler which transforms JSX/Harmony code to standard ES5 JS and implements the stubbing.
 
-To run the tests:
+To run the tests using the `mocha` command line:
 
 ```
 mocha --compilers .:tests/compiler.js tests/*test.js

@@ -7,6 +7,6 @@
     "mocha": "^2.0.1"
   },
   "scripts": {
-    "test": "mocha --compilers jsx:preprocessor.js tests/*-test.js"
+    "test": "mocha --compilers .:tests/compiler.js tests/*-test.js"
   }
 }
