@@ -14,9 +14,8 @@ npm test
 
 High order bits:
 
-- preprocessor.js registers a handler for the "jsx" extension. You can enable harmony here if you like.
-- File extensions have been changed from `.js` to `.jsx`.
-- A fake DOM is provided via `jsdom`.
+- A fake DOM is provided via `jsdom` (see `tests/testdom.js`).
+- `tests/compiler.js` registers a compiler which transforms JSX/Harmony code to standard ES5 JS.
 
 Inspiration and guidance came from the [Testing React Components][2] blog post and the Khan Academy's [React Components Makefile][3].
 
