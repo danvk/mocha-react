@@ -3,7 +3,7 @@ set -o errexit
 
 # First run the tests normally, without coverage. This produces clearer error
 # messages when a test fails.
-#npm test
+npm test
 
 # Now that the tests have passed, gather coverage data.
 NODE_ENV=test

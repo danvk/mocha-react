@@ -17,7 +17,6 @@ module.exports = function(blanket) {
     if (filename.match(/node_modules/)) {
       return origJs(localModule, filename);
     }
-    console.log('blanket require ', filename);
 
     // React-ify as necessary.
     var content = transformer.transform(filename) ||
@@ -28,7 +27,9 @@ module.exports = function(blanket) {
     var normalizedFilename = blanket.normalizeBackslashes(filename);
     if (transformer.shouldStub(filename) ||
         !blanket.matchPattern(normalizedFilename, pattern)) {
-      return localModule._compile(content, normalizedFilename);
+      localModule._compile(content, normalizedFilename);
+      delete require.cache[normalizedFilename];  // might not be stubbed in the future.
+      return;
     }
 
     blanket.instrument({
@@ -39,6 +40,7 @@ module.exports = function(blanket) {
       try {
         instrumented = instrumented.replace(/require\s*\(\s*("|')\./g,'require($1' + baseDirPath);
         localModule._compile(instrumented, normalizedFilename);
+        delete require.cache[normalizedFilename];  // might be stubbed in the future.
       } catch(err){
         console.log("Error parsing instrumented code: " + err);
       }

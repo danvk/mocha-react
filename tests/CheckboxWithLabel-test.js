@@ -11,10 +11,7 @@ var assert = require('assert');
 describe('CheckboxWithLabel', function() {
   it('changes the text after click', function() {
     var React = require('react/addons');
-    console.log('in test, reactModulesToStub = ', global.reactModulesToStub);
-    console.log('sourcing...');
     var CheckboxWithLabel = require('../src/CheckboxWithLabel');
-    console.log('done.');
     var TestUtils = React.addons.TestUtils;
 
     // Render a checkbox with label in the document
