@@ -11,4 +11,4 @@ NODE_ENV=test
   --require blanket \
   --reporter mocha-lcov-reporter \
   tests/*test.js \
-#  | ./node_modules/coveralls/bin/coveralls.js
+  | ./node_modules/coveralls/bin/coveralls.js
