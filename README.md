@@ -4,7 +4,7 @@
 mocha-react
 ===========
 
-Minimal demo of using MochaJS to test a ReactJS component (with JSX and Harmony).
+Demo of using MochaJS to test a ReactJS component (with JSX and Harmony).
 
 This is a port of the [Jest React tutorial][1]. If you'd like to test your React JS components using Mocha instead of Jest, you can use this as a template.
 
@@ -15,7 +15,15 @@ npm install
 npm test
 ```
 
-High order bits:
+What this template gets you:
+
+- JSX/Harmony transpilation
+- Opt-in module stubbing (ala Jest's "auto-mocking")
+- Code coverage via Blanket and coveralls.io
+
+For more background and information on how this works, see [this blog post][5].
+
+Here are the high order bits:
 
 - A fake DOM is provided via `jsdom` (see `tests/testdom.js`).
 - `global.reactModulesToStub` contains a list of modules to replace with stubs (ala Jest).
@@ -36,3 +44,4 @@ Inspiration and guidance came from the [Testing React Components][2] blog post a
 [2]: http://www.asbjornenge.com/wwc/testing_react_components.html
 [3]: https://github.com/Khan/react-components/blob/master/Makefile
 [4]: https://coveralls.io/r/danvk/mocha-react?branch=master
+[5]: http://www.hammerlab.org
