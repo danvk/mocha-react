@@ -1,4 +1,5 @@
 var React = require('react/addons');
+var BigComplicatedComponent = require('./BigComplicatedComponent.js');
 
 var CheckboxWithLabel = React.createClass({
   getInitialState: function() {
@@ -16,8 +17,10 @@ var CheckboxWithLabel = React.createClass({
           onChange={this.onChange}
         />
         {this.state.isChecked ? this.props.labelOn : this.props.labelOff}
+        <BigComplicatedComponent />
       </label>
     );
   }
 });
+
 module.exports = CheckboxWithLabel;

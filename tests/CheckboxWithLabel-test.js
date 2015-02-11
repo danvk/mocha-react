@@ -1,6 +1,11 @@
 // Create a fake global `window` and `document` object:
 require('./testdom')('<html><body></body></html>');
 
+// Replace BigComplicatedComponent.js with a stub component.
+global.reactModulesToStub = [
+  'BigComplicatedComponent.js'
+];
+
 var assert = require('assert');
 
 describe('CheckboxWithLabel', function() {
