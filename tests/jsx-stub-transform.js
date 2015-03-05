@@ -23,6 +23,7 @@ function shouldStub(filename) {
 // Transform a file via JSX/Harmony or stubbing.
 function transform(filename) {
   if (shouldStub(filename)) {
+    delete require.cache[filename];
     return reactStub;
   } else {
     var content = fs.readFileSync(filename, 'utf8');
