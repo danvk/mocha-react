@@ -4,7 +4,7 @@
 mocha-react
 ===========
 
-Demo of using MochaJS to test a ReactJS component (with JSX and Harmony and Flux and React-Router).
+Demo of using MochaJS to test ReactJS components (with or without JSX, Harmony, Flux and React-Router).
 
 This is a port of the [Jest React tutorial][1]. If you'd like to test your React JS components using Mocha instead of Jest, you can use this as a template.
 
@@ -37,6 +37,10 @@ mocha tests/*.js --recursive --reporter spec
 ```
 
 Inspiration and guidance came from the [Testing React Components][2] blog post and the Khan Academy's [React Components Makefile][3].
+
+See Also:
+[http://bulkan-evcimen.com/using_mockery_to_mock_modules_nodejs.html][6]
+[https://github.com/FredKSchott/the-node-way][7]
 
 [1]: http://facebook.github.io/jest/docs/tutorial-react.html#content
 [2]: http://www.asbjornenge.com/wwc/testing_react_components.html
