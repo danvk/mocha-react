@@ -5,7 +5,7 @@ var React = require('react');
 var BigComplicatedComponent = React.createClass({
   render: function() {
     console.log('Thinking really hard!');
-    return <div>42</div>;
+    return <div className="BigComplicatedComponent">42</div>;
   }
 });
 
