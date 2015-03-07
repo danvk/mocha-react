@@ -4,7 +4,7 @@
 mocha-react
 ===========
 
-Demo of using MochaJS to test a ReactJS component (with JSX and Harmony).
+Demo of using MochaJS to test ReactJS components (with or without JSX, Harmony, Flux and React-Router).
 
 This is a port of the [Jest React tutorial][1]. If you'd like to test your React JS components using Mocha instead of Jest, you can use this as a template.
 
@@ -17,8 +17,8 @@ npm test
 
 What this template gets you:
 
-- JSX/Harmony transpilation
-- Opt-in module stubbing (ala Jest's "auto-mocking")
+- JSX/Harmony transpilation with Babel
+- React Component stubbing (ala Jest's pretty borked "auto-mocking") with Mockery and Sinon
 - Code coverage via Blanket and coveralls.io
 
 For more background and information on how this works, see [this blog post][5].
@@ -26,22 +26,30 @@ For more background and information on how this works, see [this blog post][5].
 Here are the high order bits:
 
 - A fake DOM is provided via `jsdom` (see `tests/testdom.js`).
-- `global.reactModulesToStub` contains a list of modules to replace with stubs (ala Jest).
-- `tests/compiler.js` registers a compiler which transforms JSX/Harmony code to
-  standard ES5 JS and implements the stubbing.
-- `tests/blanket-stub-jsx.js` applies the same transformations, additionally
-  instrumenting code for test coverage. The results are [posted to coveralls.io][4].
+- `global.reactStub` contains a mini React stub that you can use for mocking.
+- `tests/TestContext.js` provides real Flux tests and simulated ReactRouter.Run,
+- Additionally instrumenting code for test coverage. The results are [posted to coveralls.io][4].
 
-To run the tests using the `mocha` command line:
+To run the tests using `npm test` or the `mocha` command line:
 
 ```
-mocha --compilers .:tests/compiler.js tests/*test.js
+mocha tests/*.js --recursive --reporter spec
 ```
 
 Inspiration and guidance came from the [Testing React Components][2] blog post and the Khan Academy's [React Components Makefile][3].
+
+See Also:
+[http://bulkan-evcimen.com/using_mockery_to_mock_modules_nodejs.html][6]
+[https://github.com/FredKSchott/the-node-way][7]
+[https://gist.github.com/wayoutmind/76e17f07409be07ffdcb][8]
+[https://github.com/jesstelford/react-testing-mocha-jsdom][9]
 
 [1]: http://facebook.github.io/jest/docs/tutorial-react.html#content
 [2]: http://www.asbjornenge.com/wwc/testing_react_components.html
 [3]: https://github.com/Khan/react-components/blob/master/Makefile
 [4]: https://coveralls.io/r/danvk/mocha-react?branch=master
 [5]: http://www.hammerlab.org
+[6]: http://bulkan-evcimen.com/using_mockery_to_mock_modules_nodejs.html
+[7]: https://github.com/FredKSchott/the-node-way
+[8]: https://gist.github.com/wayoutmind/76e17f07409be07ffdcb
+[9]: https://github.com/jesstelford/react-testing-mocha-jsdom

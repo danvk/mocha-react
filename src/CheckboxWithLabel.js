@@ -10,7 +10,7 @@ var CheckboxWithLabel = React.createClass({
   },
   render: function() {
     return (
-      <label>
+      <label className="CheckboxWithLabel">
         <input
           type="checkbox"
           checked={this.state.isChecked}
