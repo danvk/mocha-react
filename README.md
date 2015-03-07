@@ -41,6 +41,7 @@ Inspiration and guidance came from the [Testing React Components][2] blog post a
 See Also:
 [http://bulkan-evcimen.com/using_mockery_to_mock_modules_nodejs.html][6]
 [https://github.com/FredKSchott/the-node-way][7]
+[https://gist.github.com/wayoutmind/76e17f07409be07ffdcb][8]
 
 [1]: http://facebook.github.io/jest/docs/tutorial-react.html#content
 [2]: http://www.asbjornenge.com/wwc/testing_react_components.html
@@ -49,3 +50,4 @@ See Also:
 [5]: http://www.hammerlab.org
 [6]: http://bulkan-evcimen.com/using_mockery_to_mock_modules_nodejs.html
 [7]: https://github.com/FredKSchott/the-node-way
+[8]: https://gist.github.com/wayoutmind/76e17f07409be07ffdcb
