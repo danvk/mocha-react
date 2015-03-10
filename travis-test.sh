@@ -6,6 +6,7 @@ set -o errexit
 npm test
 
 # Now that the tests have passed, gather coverage data.
+set +o errexit
 NODE_ENV=test
 ./node_modules/.bin/mocha \
   --require blanket \
