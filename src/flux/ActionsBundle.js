@@ -1,4 +1,5 @@
-var _ = require('lodash');
+//flux/actionsBundle.js
+
 var AppActions = require('./AppActions');
 
 var actions = {

@@ -24,4 +24,15 @@ describe('Spec 2', function() {
             component, 'CheckboxWithLabel');
     });
 
+    it('renders CheckboxWithLabel and stubs BigComplicatedComponent and checks props', function() {
+
+        var TestContext = require('./lib/TestContext').getRouterComponent(MyComponent, {myProp: 'yadayada'}),
+            component = TestContext.component,
+            flux = TestContext.flux;
+
+        // check your component props
+        assert(component.props.myProp, 'yadayada');
+    });
+
+
 });

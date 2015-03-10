@@ -14,7 +14,13 @@ var Router = require('react-router'),
 
 var TestContext = {
 
-    getRouterComponent: function(targetComponent) {
+    getRouterComponent: function(targetComponent, props) {
+
+        //check props and add flux
+        if(typeof props === 'undefined'){
+            props = {};
+        }
+        props.flux = fakeFlux;
 
         var component, mainComponent,
             routes = [
@@ -30,7 +36,7 @@ var TestContext = {
         //run router
         Router.run(routes, TestLocation, function (Handler) {
 
-            mainComponent = React.render(React.createFactory(Handler)({flux: fakeFlux}), global.document.body);
+            mainComponent = React.render(React.createFactory(Handler)(props), global.document.body);
             component = TestUtils.findRenderedComponentWithType(mainComponent, targetComponent);
 
         });
