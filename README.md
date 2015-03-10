@@ -66,6 +66,8 @@ See Also:
  [https://github.com/FredKSchott/the-node-way][7]
 - react router issues
  [https://github.com/rackt/react-router/issues/437][8]
+- react testing mocha
+ [https://github.com/jesstelford/react-testing-mocha-jsdom][9]
 
 [1]: http://facebook.github.io/jest/docs/tutorial-react.html#content
 [2]: http://www.asbjornenge.com/wwc/testing_react_components.html
@@ -75,3 +77,4 @@ See Also:
 [6]: http://bulkan-evcimen.com/using_mockery_to_mock_modules_nodejs.html
 [7]: https://github.com/FredKSchott/the-node-way
 [8]: https://github.com/rackt/react-router/issues/437
+[9]: https://github.com/jesstelford/react-testing-mocha-jsdom
