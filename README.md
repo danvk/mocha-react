@@ -44,4 +44,4 @@ Inspiration and guidance came from the [Testing React Components][2] blog post a
 [2]: http://www.asbjornenge.com/wwc/testing_react_components.html
 [3]: https://github.com/Khan/react-components/blob/master/Makefile
 [4]: https://coveralls.io/r/danvk/mocha-react?branch=master
-[5]: http://www.hammerlab.org
+[5]: http://www.hammerlab.org/2015/02/14/testing-react-web-apps-with-mocha/
