@@ -1,5 +1,5 @@
 // Create a fake global `window` and `document` object:
-require('./testdom')('<html><body></body></html>');
+var jsdom = require('mocha-jsdom');
 
 // Replace BigComplicatedComponent.js with a stub component.
 global.reactModulesToStub = [
@@ -9,6 +9,8 @@ global.reactModulesToStub = [
 var assert = require('assert');
 
 describe('CheckboxWithLabel', function() {
+  jsdom();
+
   it('changes the text after click', function() {
     var React = require('react/addons');
     var CheckboxWithLabel = require('../src/CheckboxWithLabel');
