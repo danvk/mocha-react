@@ -48,7 +48,6 @@ module.exports = function(blanket) {
   };
 
   // Source all JS files so that they count towards the denominator.
-  require('./testdom')('<html><body></body></html>');
   var antifilters = blanket.options('antifilter');
   var pattern = './' + blanket.options('filter') + '/**/*.js';
   glob.sync(pattern).forEach(function(path) {
