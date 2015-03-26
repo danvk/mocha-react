@@ -6,3 +6,5 @@ node_js:
 
 # Run the tests & submit code coverage data to Coveralls
 script: ./travis-test.sh
+
+sudo: false   # use container-based architecture; starts up faster
