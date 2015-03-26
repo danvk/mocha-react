@@ -25,7 +25,7 @@ For more background and information on how this works, see [this blog post][5].
 
 Here are the high order bits:
 
-- A fake DOM is provided via `jsdom` (see `tests/testdom.js`).
+- A fake DOM is provided via `mocha-jsdom` (see [`tests/CheckboxWithLabel-test.js`][6]).
 - `global.reactModulesToStub` contains a list of modules to replace with stubs (ala Jest).
 - `tests/compiler.js` registers a compiler which transforms JSX/Harmony code to
   standard ES5 JS and implements the stubbing.
@@ -45,3 +45,4 @@ Inspiration and guidance came from the [Testing React Components][2] blog post a
 [3]: https://github.com/Khan/react-components/blob/master/Makefile
 [4]: https://coveralls.io/r/danvk/mocha-react?branch=master
 [5]: http://www.hammerlab.org/2015/02/14/testing-react-web-apps-with-mocha/
+[6]: https://github.com/danvk/mocha-react/blob/93d81dab8a4460bc114407e8c812ddcf8ea8322e/tests/CheckboxWithLabel-test.js#L12
