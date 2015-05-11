@@ -1,42 +1,49 @@
 // tests/TestContext.js
-// used to bootstrap components that require flux
+// used to bootstrap components that require flux and react-router
 'use strict';
 
 var Router = require('react-router'),
     Route = Router.Route,
-    React = require('react/addons'),
-    TestUtils = React.addons.TestUtils,
-    TestLocation = require('react-router/modules/locations/TestLocation'),
+    TestLocation = Router.TestLocation,
+    StubRouterContext = require('./StubRouterContext'),
     FluxxorTestUtils = require('fluxxor-test-utils'),
-    FluxConstructor = require('../../src/flux/FluxConstructor.js'),
-    realFlux = FluxConstructor(),
-    fakeFlux = FluxxorTestUtils.fakeFlux(realFlux);
+    FluxConstructor = require('../../src/flux/FluxConstructor.js');
 
 var TestContext = {
 
     getRouterComponent: function(targetComponent, props) {
 
-        //check props and add flux
+        // create flux from real flux
+        var realFlux = FluxConstructor();
+        var fakeFlux = FluxxorTestUtils.fakeFlux(realFlux);
+
+        // check props and add flux
         if(typeof props === 'undefined'){
             props = {};
         }
         props.flux = fakeFlux;
 
-        var component, mainComponent,
-            routes = [
-                React.createFactory(Route)({
-                    name: 'test',
-                    handler: targetComponent
-                })
-            ];
+        // create components
+        var component, mainComponent;
 
-        //create router history
-        TestLocation.history = ['/test'];
+        // and routes
+        var routes = (
+            <Route name="test" path="/test" handler={targetComponent} />
+        );
 
-        //run router
-        Router.run(routes, TestLocation, function (Handler) {
+        // create router history
+        var location = new TestLocation(['/test']);
 
-            mainComponent = React.render(React.createFactory(Handler)(props), global.document.body);
+        // run router
+        Router.run(routes, location, function (Handler) {
+
+            // stub out router context
+            var TestSubject = StubRouterContext(Handler, props);
+
+            // return render main component into dom
+            mainComponent = React.render(<TestSubject />, global.document.body);
+
+            // and utility component
             component = TestUtils.findRenderedComponentWithType(mainComponent, targetComponent);
 
         });
@@ -44,7 +51,8 @@ var TestContext = {
         return {
             flux: fakeFlux,
             component: component,
-            mainComponent: mainComponent
+            mainComponent: mainComponent,
+            location: TestLocation
         };
     }
 };
