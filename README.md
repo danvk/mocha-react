@@ -8,6 +8,8 @@ Demo of using MochaJS to test a ReactJS component (with JSX and Harmony).
 
 This is a port of the [Jest React tutorial][1]. If you'd like to test your React JS components using Mocha instead of Jest, you can use this as a template.
 
+**NOTE: If you're client-side React (i.e. code that runs in a browser), I would not recommend this approach.** Instead, run your tests in PhantomJS or Selenium using the Mocha test runner. If your code is intended to run in a browser, you'll save yourself lots of headaches by testing it in a browser, too.
+
 Quick start:
 
 ```
